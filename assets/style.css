@@ -1,0 +1,91 @@
+:root {
+  --indigo: #1E1B4B;
+  --indigo-2: #2B2766;
+  --ink: #0B0A1F;
+  --teal: #2DD4BF;
+  --teal-deep: #14B8A6;
+  --amber: #FBBF24;
+  --snow: #F8FAFC;
+  --muted: #B9B7D9;
+  --line: rgba(45, 212, 191, 0.18);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--indigo);
+  color: var(--snow);
+  font-family: Poppins, "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+}
+a { color: var(--teal); }
+a:hover { color: var(--amber); }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+/* header */
+.top { padding: 20px 0; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--teal); font-weight: 700; font-size: 20px; }
+.brand img { width: 40px; height: 40px; }
+.brand b { color: var(--amber); font-weight: 800; }
+.top nav { display: flex; gap: 18px; font-size: 15px; }
+.top nav a { color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--snow); }
+
+/* hero */
+.hero { position: relative; overflow: hidden; padding: 56px 0 72px; text-align: center; }
+.hero::before, .hero::after {
+  content: ""; position: absolute; border-radius: 50%; border: 2px solid var(--line); pointer-events: none;
+}
+.hero::before { width: 620px; height: 620px; left: -360px; top: -80px; }
+.hero::after { width: 520px; height: 520px; right: -300px; top: 40px; }
+.hero .mark { width: 128px; height: 128px; }
+.hero h1 { margin: 18px 0 6px; font-size: clamp(36px, 7vw, 60px); line-height: 1.1; color: var(--teal); font-weight: 700; }
+.hero h1 b { color: var(--amber); font-weight: 800; }
+.tagline { font-size: clamp(17px, 3.4vw, 21px); font-weight: 500; margin: 8px 0 4px; }
+.sub { color: var(--muted); max-width: 560px; margin: 0 auto 28px; }
+.tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
+.tags span { border: 2px solid var(--teal); color: var(--teal); border-radius: 40px; padding: 4px 18px; font-weight: 600; font-size: 15px; }
+.cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 40px;
+  font-weight: 700; text-decoration: none; font-size: 16px; transition: transform .15s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn.primary { background: var(--amber); color: var(--indigo); }
+.btn.ghost { border: 2px solid var(--teal); color: var(--teal); }
+.btn svg { width: 20px; height: 20px; fill: currentColor; }
+
+/* sections */
+section.block { padding: 56px 0; border-top: 1px solid var(--line); }
+section.block h2 { font-size: 28px; margin: 0 0 8px; }
+section.block h2 em { font-style: normal; color: var(--amber); }
+section.block > .wrap > p { color: var(--muted); margin: 0 0 28px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.card { background: var(--indigo-2); border-radius: 18px; padding: 22px; }
+.card h3 { margin: 0 0 6px; color: var(--teal); font-size: 18px; }
+.card p { margin: 0; color: var(--muted); font-size: 15px; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--amber); margin-right: 8px; }
+
+/* legal pages */
+.legal { padding: 24px 0 64px; }
+.legal h1 { color: var(--teal); font-size: clamp(30px, 6vw, 42px); margin: 10px 0 4px; }
+.legal .date { color: var(--muted); margin: 0 0 28px; }
+.legal h2 { font-size: 20px; color: var(--amber); margin: 32px 0 8px; }
+.legal p, .legal li { color: #E2E1F5; }
+.legal ul { padding-left: 22px; }
+.note { background: var(--indigo-2); border-left: 4px solid var(--amber); padding: 14px 18px; border-radius: 10px; }
+
+/* footer */
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--teal); }
+
+@media (max-width: 560px) {
+  .top nav { gap: 12px; font-size: 14px; }
+  .brand span { display: none; }
+  .hero { padding: 36px 0 56px; }
+}
